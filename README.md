@@ -1,4 +1,4 @@
-# Beasiswa Miskin Berprestasi NTB
+# Beasiswa NTB Dalam Negeri
 
 ## Beasiswa Miskin Berprestasi
 
