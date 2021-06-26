@@ -1,0 +1,12 @@
+[17-Jun-2021 15:24:09 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function CodeIgniter\locale_set_default() in /home/u3727568/public_html/bmb/vendor/codeigniter4/framework/system/CodeIgniter.php:184
+Stack trace:
+#0 /home/u3727568/public_html/bmb/vendor/codeigniter4/framework/system/bootstrap.php(181): CodeIgniter\CodeIgniter->initialize()
+#1 /home/u3727568/public_html/bmb/public/index.php(36): require('/home/u3727568/...')
+#2 {main}
+  thrown in /home/u3727568/public_html/bmb/vendor/codeigniter4/framework/system/CodeIgniter.php on line 184
+[17-Jun-2021 15:24:21 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function CodeIgniter\locale_set_default() in /home/u3727568/public_html/bmb/vendor/codeigniter4/framework/system/CodeIgniter.php:184
+Stack trace:
+#0 /home/u3727568/public_html/bmb/vendor/codeigniter4/framework/system/bootstrap.php(181): CodeIgniter\CodeIgniter->initialize()
+#1 /home/u3727568/public_html/bmb/public/index.php(36): require('/home/u3727568/...')
+#2 {main}
+  thrown in /home/u3727568/public_html/bmb/vendor/codeigniter4/framework/system/CodeIgniter.php on line 184

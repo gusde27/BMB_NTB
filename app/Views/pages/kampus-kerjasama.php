@@ -36,7 +36,40 @@
 
                 <!-- kampus -->
                 <?php $counter=1; ?>
-                <?php for ($i=1;$i<=intval(count($kampus)/3);$i++):?>
+                <?php $jumlah=intval(count($kampus)/3) ?>
+                <?php if(count($kampus)<3) : ?>
+                <div class="cat-flex" style="margin: 15px 0px;">
+                    <style>
+                    .custom-hover:hover {
+                        background-color: #fff2e5;
+                    }
+                    </style>
+                    <?php for($j=0;$j<=count($kampus);$j++):?>
+                    <div class="cat1">
+                        <a href="detail-kampus/<?= $kampus[$j]['slug'] ?>">
+                            <div class="cat-item clr2 custom-hover">
+                                <div class="cat-icon">
+                                    <?php if($kampus[$j]['foto']==''):?>
+                                    <div class="cat-img" style="text-align: center;">
+                                        <p>Foto Tidak Ada</p>
+                                    </div>
+                                    <?php else :?>
+                                    <div class="cat-img" style="text-align: center;">
+                                        <img src="<?= base_url('file/pt/foto_pts/' . $kampus[$j]['foto'] . ''); ?>"
+                                            width="100%">
+                                    </div>
+                                    <?php  endif ?>
+                                </div>
+                                <div class="cat-text">
+                                    <h3 style="text-align:center"><?= $kampus[$j]['nama'] ?></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <?php endfor?>
+                </div>
+                <?php endif ?>
+                <?php for ($i=1;$i<=$jumlah;$i++):?>
                 <div class="cat-flex" style="margin: 15px 0px;">
                     <style>
                     .custom-hover:hover {
@@ -48,10 +81,16 @@
                         <a href="detail-kampus/<?= $kampus[$j-1]['slug'] ?>">
                             <div class="cat-item clr2 custom-hover">
                                 <div class="cat-icon">
-                                    <div class="cat-img">
+                                    <?php if($kampus[$j-1]['foto']==''):?>
+                                    <div class="cat-img" style="text-align: center;">
+                                        <p>Foto Tidak Ada</p>
+                                    </div>
+                                    <?php else :?>
+                                    <div class="cat-img" style="text-align: center;">
                                         <img src="<?= base_url('file/pt/foto_pts/' . $kampus[$j-1]['foto'] . ''); ?>"
                                             width="100%">
                                     </div>
+                                    <?php  endif ?>
                                 </div>
                                 <div class="cat-text">
                                     <h3 style="text-align:center"><?= $kampus[$j-1]['nama'] ?></h3>
@@ -63,7 +102,40 @@
                     <?php $counter+=3?>
                 </div>
                 <?php endfor?>
+                <?php if(count($kampus)>3) :?>
+                <div class="cat-flex" style="margin: 15px 0px;">
+                    <style>
+                    .custom-hover:hover {
+                        background-color: #fff2e5;
+                    }
+                    </style>
+                    <?php for($j=($jumlah*3)+1;$j<=count($kampus);$j++):?>
+                    <div class="cat1">
+                        <a href="detail-kampus/<?= $kampus[$j-1]['slug'] ?>">
+                            <div class="cat-item clr2 custom-hover">
+                                <div class="cat-icon">
+                                    <?php if($kampus[$j-1]['foto']==''):?>
+                                    <div class="cat-img" style="text-align: center;">
+                                        <p>Foto Tidak Ada</p>
+                                    </div>
+                                    <?php else :?>
+                                    <div class="cat-img" style="text-align: center;">
+                                        <img src="<?= base_url('file/pt/foto_pts/' . $kampus[$j-1]['foto'] . ''); ?>"
+                                            width="100%">
+                                    </div>
+                                    <?php  endif ?>
+                                </div>
+                                <div class="cat-text">
+                                    <h3 style="text-align:center"><?= $kampus[$j-1]['nama'] ?></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <?php endfor?>
+                </div>
+                <?php endif ?>
                 <!-- tutup kampus -->
+                
             </div>
         </div>
     </div>

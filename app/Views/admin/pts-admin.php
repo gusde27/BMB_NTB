@@ -85,11 +85,14 @@
                         <!-- Table -->
                         <?php $i = 1; ?>
                         <div class="table-responsive">
-                            <table id="datalol" class="table table-bordered mt-4" style="color:black; font-size:15px;">
+                            <table id="datalol" class="table table-bordered mt-4 display nowrap"
+                                style="color:black; font-size:15px;">
                                 <thead>
                                     <tr>
                                         <th scope="col" style="text-align:center;">No</th>
                                         <th scope="col">Nama Perguruan Tinggi</th>
+                                        <th scope="col">Alamat</th>
+                                        <th scope="col">Website</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -99,10 +102,28 @@
                                         <th scope="row" style="text-align: center;"><?= $i++; ?></th>
                                         <td><?= $p['nama'] ?></td>
                                         <td>
+                                            <?php
+                                            if($p['alamat'] != ""){
+                                                echo $p['alamat'];
+                                            } else {
+                                                echo "Belum Diisi";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if($p['link'] != ""){
+                                                echo $p['link'];
+                                            } else {
+                                                echo "Belum Diisi";
+                                            }
+                                            ?>
+                                        </td>
+                                        <td>
                                             <!-- update -->
                                             <button type="button" class="btn btn-sm btn-primary mb-2"
                                                 data-toggle="modal" data-target="#detail_pts<?= $i ?>">
-                                                Update
+                                                <i class="fas fa-edit"></i>
                                             </button>
                                             <!-- Modal -->
                                             <div class="modal fade" style="color: none;" id="detail_pts<?= $i ?>"
@@ -190,7 +211,7 @@
                                             <!--delete-->
                                             <button type="button" class="btn btn-sm btn-danger mb-2" data-toggle="modal"
                                                 data-target="#delete_pts<?= $i ?>">
-                                                Delete
+                                                <i class="fas fa-trash"></i>
                                             </button>
                                             <!-- Modal -->
                                             <div class="modal fade" style="color: none;" id="delete_pts<?= $i ?>"
@@ -242,14 +263,14 @@
                                             <!-- mahasiswa -->
                                             <a href="mahasiswa-admin/<?= $p['id']; ?>">
                                                 <button type="button" class="btn btn-sm btn-primary mb-2">
-                                                    Mahasiswa
+                                                    <i class="fas fa-user-graduate"></i>
                                                 </button>
                                             </a>
                                             <!-- tutup mahasiswa -->
                                             <!-- recent news -->
                                             <a href="recent-news-admin/<?= $p['id']; ?>">
                                                 <button type="button" class="btn btn-sm btn-primary mb-2">
-                                                    Recent News
+                                                    <i class="far fa-newspaper"></i>
                                                 </button>
                                             </a>
                                             <!-- tutup recent news -->

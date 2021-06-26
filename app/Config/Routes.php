@@ -50,17 +50,18 @@ $routes->get('/logout', 'Pages::logout');
 
 //Admin
 $routes->get('/dashboard-admin', 'AdminController::index', ['filter' => 'admin']);
+$routes->get('/daftar-mhs-admin', 'AdminController::daftar_mhs_admin', ['filter' => 'admin']); //daftar mahasiswa admin
 $routes->get('/pts-admin', 'AdminController::pts', ['filter' => 'admin']);
-$routes->get('/massage-admin', 'AdminController::massage', ['filter' => 'admin']);
+//$routes->get('/massage-admin', 'AdminController::massage', ['filter' => 'admin']); //massage admin
+$routes->get('/mahasiswa-admin/(:any)', 'AdminController::DataMHS/$1', ['filter' => 'admin']);
+$routes->get('/recent-news-admin/(:any)', 'AdminController::DataRECENT/$1', ['filter' => 'admin']);
+$routes->get('/detail-mhs-admin/(:any)/(:any)', 'AdminController::MhsDetail/$1/$2', ['filter' => 'admin']);
 
+//berita admin
 $routes->get('/berita-admin', 'AdminController::berita_admin', ['filter' => 'admin']); // Get berita Admin
 $routes->post('/tambah_berita_admin', 'AdminController::beritaTambah', ['filter' => 'admin']); //Tambah berita Admin
 $routes->post('/update_berita_admin', 'AdminController::beritaUpdate', ['filter' => 'admin']); //Update berita Admin
 $routes->post('/delete_berita_admin', 'AdminController::beritaDelete', ['filter' => 'admin']); //Delete berita Admin
-
-$routes->get('/mahasiswa-admin/(:any)', 'AdminController::DataMHS/$1', ['filter' => 'admin']);
-$routes->get('/recent-news-admin/(:any)', 'AdminController::DataRECENT/$1', ['filter' => 'admin']);
-$routes->get('/detail-mhs-admin/(:any)/(:any)', 'AdminController::MhsDetail/$1/$2', ['filter' => 'admin']);
 
 
 $routes->post('/delete-pesanAdmin', 'AdminController::massageDelete', ['filter' => 'admin']); //massage

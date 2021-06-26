@@ -34,7 +34,6 @@
                 <div class="cat-flex" style="margin: 20px 0px">
                     <p
                         style="white-space: pre-line; font-size: 1rem; line-height: 25px; text-indent: 30px; text-align: justify;">
-                        Universitas
                         <?= $p['deskripsi'] ?>
                     </p>
                 </div>
@@ -53,15 +52,16 @@
                         <h2>Penerima Beasiswa</h2>
                     </div>
                 </div>
-                <?php $counter=1; ?>
-                <?php for ($i=1;$i<=intval(count($mhs)/4);$i++):?>
+                
+                <!-- mahasiswa -->
+                <?php if(count($mhs)<4) : ?>
                 <div class="cat-flex" style="margin: 15px 0px;">
                     <style>
                     .custom-hover:hover {
                         background-color: #fff2e5;
                     }
                     </style>
-                    <?php for($j=$counter;$j<=($i*4);$j++):?>
+                    <?php for($j=0;$j<count($mhs);$j++):?>
                     <div class="cat1 ">
                         <div class="cat-item clr2 custom-hover">
                             <div class="cat-icon">
@@ -83,9 +83,75 @@
                         </div>
                     </div>
                     <?php endfor?>
+                </div>
+                <?php endif ?>
+                <?php $counter=1; ?>
+                <?php $jumlah=intval(count($mhs)/4) ?>
+                <?php for ($i=1;$i<=$jumlah;$i++):?>
+                <div class="cat-flex" style="margin: 15px 0px;">
+                    <style>
+                    .custom-hover:hover {
+                        background-color: #fff2e5;
+                    }
+                    </style>
+                    <?php for($j=$counter;$j<=($i*4);$j++):?>
+                    <div class="cat1 ">
+                        <div class="cat-item clr2 custom-hover">
+                            <div class="cat-icon">
+                                <div class="cat-img">
+                                    <?php if($mhs[$j-1]['foto']==''):?>
+                                    <div style="height: 100%; text-align: center;">
+                                        <p> Foto Tidak Ada</p>
+                                    </div>
+                                    <?php else :?>
+                                    <img src="<?= base_url('file/pt/foto_profile/' . $mhs[$j-1]['foto'] . ''); ?>"
+                                        width="100%">
+                                    <?php endif?>
+                                </div>
+                            </div>
+                            <div class="cat-text" style="text-align: center;">
+                                <h3><?= $mhs[$j-1]['nama'] ?></h3>
+                                <p><?= $mhs[$j-1]['jurusan'] ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endfor?>
                     <?php $counter+=4?>
                 </div>
                 <?php endfor?>
+                <?php if(count($mhs)>4) :?>
+                <div class="cat-flex" style="margin: 15px 0px;">
+                    <style>
+                    .custom-hover:hover {
+                        background-color: #fff2e5;
+                    }
+                    </style>
+                    <?php for($j=($jumlah*4)+1;$j<=count($mhs);$j++):?>
+                    <div class="cat1">
+                        <div class="cat-item clr2 custom-hover">
+                            <div class="cat-icon">
+                                <div class="cat-img">
+                                    <?php if($mhs[$j-1]['foto']==''):?>
+                                    <div style="height: 100%; text-align: center;">
+                                        <p> Foto Tidak Ada</p>
+                                    </div>
+                                    <?php else :?>
+                                    <img src="<?= base_url('file/pt/foto_profile/' . $mhs[$j-1]['foto'] . ''); ?>"
+                                        width="100%">
+                                    <?php endif?>
+                                </div>
+                            </div>
+                            <div class="cat-text" style="text-align: center;">
+                                <h3><?= $mhs[$j-1]['nama'] ?></h3>
+                                <p><?= $mhs[$j-1]['jurusan'] ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <?php endfor?>
+                </div>
+                <?php endif ?>
+                <!-- tutup mahasiswa -->
+                
             </div>
         </div>
     </div>

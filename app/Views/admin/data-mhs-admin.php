@@ -33,16 +33,19 @@
 
                         <!-- Table -->
                         <?php $i = 1; ?>
-                        <div class="table-responsive">
-                            <table id="datalol" class="table table-bordered mt-4" style="color:black;">
+                        <div class="table-responsive style="font-size: 12px;"">
+                            <table id="datalol" class="table table-striped table-bordered mt-4 display nowrap" style="color:black;">
                                 <thead>
                                     <tr>
                                         <th scope="col" style="text-align:center;">No</th>
+                                        <th scope="col">Universitas</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">NIM</th>
+                                        <th scope="col">Jenis Kelamin</th>
+                                        <th scope="col">Tempat Tanggal Lahir</th>
                                         <th scope="col">Jurusan</th>
                                         <th scope="col">Alamat</th>
-                                        <th scope="col">Jenis Kelamin</th>
+                                        <th scope="col">No Hp</th>
                                         <th scope="col">Email</th>
                                         <th scope="col">Detail</th>
                                     </tr>
@@ -51,11 +54,14 @@
                                     <?php foreach ($mahasiswa as $mhs) : ?>
                                     <tr>
                                         <th scope="row" style="text-align: center;"><?= $i++; ?></th>
+                                        <td><?= $mhs['pts'] ?></td>
                                         <td><?= $mhs['nama'] ?></td>
                                         <td><?= $mhs['nim'] ?></td>
+                                        <td><?= $mhs['jk'] ?></td>
+                                        <td><? echo "{$mhs['tempat_lahir']}, {$mhs['tanggal_lahir']}"; ?></td>
                                         <td><?= $mhs['jurusan'] ?></td>
                                         <td><?= $mhs['alamat'] ?></td>
-                                        <td><?= $mhs['jk'] ?></td>
+                                        <td><?= $mhs['no_hp'] ?></td>
                                         <td><?= $mhs['email'] ?></td>
                                         <td>
                                             <a href="/detail-mhs-admin/<?= $kampus; ?>/<?= $mhs['id']; ?>">

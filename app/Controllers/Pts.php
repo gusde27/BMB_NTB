@@ -215,6 +215,8 @@ class Pts extends BaseController
         return redirect()->back();
     }
 
+
+
     //TUTUP BERITA
 
     public function PtsUpdate()

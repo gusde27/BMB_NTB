@@ -3,8 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Connect - Personal Portfolio Template</title>
-    <link rel="icon" href="assets/icons/favicon.png" type="image/png" sizes="16x16">
+    <title>Beasiswa Miskin Berprestasi NTB</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Connect Multipurpose  Landing Page Template Template">

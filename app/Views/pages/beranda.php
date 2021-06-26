@@ -17,9 +17,7 @@
                                      <h4>Biro Kesejahteraan Rakyat Sekretariat Daerah <br> Provinsi Nusa Tenggara Barat
                                      </h4>
                                      <h2> <i class="fas fa-user-graduate    "></i> Beasiswa Miskin Berprestasi</h2>
-                                     <p>Beasiswa Miskin Berprestasi - adalah beasiswa yang diberikan kepada
-                                         masyarakat/mahasiswa miskin asal NTB yang mengikuti pendidikan tinggi di
-                                         Perguruan Tinggi di dalam negeri.</p>
+                                     <p>BMB NTB ditujukan bagi masyarakat asal NTB yang miskin dan/atau berprestasi akademik atau non akademik pada jenjang pendidikan D1, D2, D3, atau S1 pada PTS di dalam Provinsi NTB.</p>
                                      <a class="btn-action btn-outline nav-link js-scroll-trigger" href="#features"><i
                                              class=" fab fa-instagram "></i> Instagram</a>
                                      <a class="btn-action btn-outline nav-link js-scroll-trigger" href="#"><i

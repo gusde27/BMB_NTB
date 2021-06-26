@@ -35,37 +35,88 @@
                 </div>
 
                 <!-- berita -->
+                <?php $counter=1; ?>
+                <?php $jumlah=intval(count($news)/3) ?>
+                <?php if(count($news)<3) : ?>
+
                 <div class="cat-flex" style="margin: 15px 0px;">
                     <style>
                     .custom-hover:hover {
                         background-color: #fff2e5;
                     }
                     </style>
-
-                    <!-- berita satuan -->
-                    <?php foreach ($news as $n) : 
-                    if($n['foto'] != '') {
-                    ?>
-                    <a href="detail-berita/<?= $n['slug']; ?>">
-                        <div class="cat1">
+                    <?php for($j=0;$j<count($news);$j++):?>
+                    <div class="cat1">
+                        <a href="detail-berita/<?= $news[$j]['slug'] ?>">
                             <div class="cat-item clr2 custom-hover">
                                 <div class="cat-icon">
                                     <div class="cat-img">
-                                        <img src="<?= base_url('file/pt/foto_berita/' . $n['foto'] . ''); ?>"
+                                        <img src="<?= base_url('file/pt/foto_berita/' . $news[$j]['foto'] . ''); ?>"
                                             width="100%">
                                     </div>
                                 </div>
                                 <div class="cat-text">
-                                    <h3><?= $n['judul']; ?></h3>
+                                    <h3 style="text-align:center"><?= $news[$j]['judul'] ?></h3>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                    <?php } 
-                    endforeach;
-                    ?>
-                    <!-- tutup satuan berita -->
+                        </a>
+                    </div>
+                    <?php endfor?>
                 </div>
+                <?php endif ?>
+                <?php for ($i=1;$i<=$jumlah;$i++):?>
+                <div class="cat-flex" style="margin: 15px 0px;">
+                    <style>
+                    .custom-hover:hover {
+                        background-color: #fff2e5;
+                    }
+                    </style>
+                    <?php for($j=$counter;$j<=($i*3);$j++):?>
+                    <div class="cat1">
+                        <a href="detail-berita/<?= $news[$j-1]['slug'] ?>">
+                            <div class="cat-item clr2 custom-hover">
+                                <div class="cat-icon">
+                                    <div class="cat-img">
+                                        <img src="<?= base_url('file/pt/foto_berita/' . $news[$j-1]['foto'] . ''); ?>"
+                                            width="100%">
+                                    </div>
+                                </div>
+                                <div class="cat-text">
+                                    <h3 style="text-align:center"><?= $news[$j-1]['judul'] ?></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <?php endfor?>
+                    <?php $counter+=3?>
+                </div>
+                <?php endfor?>
+                <?php if(count($news)>3) :?>
+                <div class="cat-flex" style="margin: 15px 0px;">
+                    <style>
+                    .custom-hover:hover {
+                        background-color: #fff2e5;
+                    }
+                    </style>
+                    <?php for($j=($jumlah*3)+1;$j<=count($news);$j++):?>
+                    <div class="cat1">
+                        <a href="detail-kampus/<?= $news[$j-1]['slug'] ?>">
+                            <div class="cat-item clr2 custom-hover">
+                                <div class="cat-icon">
+                                    <div class="cat-img">
+                                        <img src="<?= base_url('file/pt/foto_berita/' . $news[$j-1]['foto'] . ''); ?>"
+                                            width="100%">
+                                    </div>
+                                </div>
+                                <div class="cat-text">
+                                    <h3 style="text-align:center"><?= $news[$j-1]['judul'] ?></h3>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <?php endfor?>
+                </div>
+                <?php endif ?>
                 <!-- tutup berita -->
 
 
